@@ -627,9 +627,6 @@ p {
     border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-.skill-card:nth-child(3) {
-    grid-column: 1 / -1;
-}
 
 .skill-card:hover {
     transform: translateY(-10px);
