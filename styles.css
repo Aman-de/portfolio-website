@@ -415,7 +415,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    margin-top: 15rem; /* Push the vertical video down for better asymmetric balance */
+    margin-top: 8rem; /* Push the vertical video down for better asymmetric balance */
 }
 
 .grid-col-right {
