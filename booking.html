@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call | Udit Sharma</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Specific overrides for the booking page to ensure immersion */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: var(--bg-base);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .booking-header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(6, 6, 8, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .booking-header .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .booking-header .logo span {
+            color: var(--accent-blue);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .back-btn {
+            font-family: var(--font-body);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .booking-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 4rem 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .booking-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .booking-title h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .booking-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .calendly-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .booking-title h1 {
+                font-size: 2.5rem;
+            }
+            .booking-container {
+                padding: 2rem 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="booking-header">
+        <a href="./index.html" class="logo">udit<span>.design</span></a>
+        <a href="./index.html" class="back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Return to Portfolio
+        </a>
+    </header>
+
+    <main class="booking-container reveal-up">
+        <div class="booking-title">
+            <h1>Let's Create Magic.</h1>
+            <p>Select a time below for our 30-minute discovery call. We'll discuss your goals, vision, and how elite design can elevate your brand.</p>
+        </div>
+
+        <div class="calendly-wrapper glass">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/letmedoedit/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0c0c0e&text_color=ffffff&primary_color=3b82f6" style="min-width:320px;height:750px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </main>
+
+    <footer class="footer" style="margin-top: auto;">
+        <div class="container">
+            <p>© 2026 Udit Sharma. Handcrafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>

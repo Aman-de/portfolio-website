@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udit Sharma | Elite Visual Designer & AI Innovator</title>
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) for Editorial Luxury -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Global Grain Texture Layer -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <a href="#" class="logo">udit<span>.design</span></a>
+        <div class="nav-links">
+            <a href="#work" class="nav-btn secondary">Showreel</a>
+            <a href="./resume.html" target="_blank" class="nav-btn primary">View Resume</a>
+            <a href="#contact" class="nav-btn primary">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <!-- Personalized custom hero background derived from user's cover -->
+        <div class="hero-bg" style="background-image: url('./assets/hero_image.png');"></div>
+        <div class="hero-gradient-overlay"></div>
+        
+        <div class="hero-content container">
+            <h1 class="hero-title reveal-up">Crafting <span>Visuals</span> <br> That Convert.</h1>
+            <p class="hero-subtitle reveal-up delay-1">Visual Designer & AI Video Engineer</p>
+            <div class="hero-actions reveal-up delay-2">
+                <a href="#work" class="btn primary">View Masterpieces</a>
+                <a href="./resume.html" target="_blank" class="btn secondary">Get Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Infinite Scrolling Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>AI Video Engineering</span>
+            <span class="dot">•</span>
+            <span>Motion Graphics</span>
+            <span class="dot">•</span>
+            <span>SaaS Ad Campaigns</span>
+            <span class="dot">•</span>
+            <span>Advanced Compositing</span>
+            <span class="dot">•</span>
+            <span>UI/UX Design</span>
+            <span class="dot">•</span>
+            <span>Visual Storytelling</span>
+            <span class="dot">•</span>
+        </div>
+        <!-- Duplicate for seamless looping -->
+        <div class="marquee-content" aria-hidden="true">
+            <span>AI Video Engineering</span>
+            <span class="dot">•</span>
+            <span>Motion Graphics</span>
+            <span class="dot">•</span>
+            <span>SaaS Ad Campaigns</span>
+            <span class="dot">•</span>
+            <span>Advanced Compositing</span>
+            <span class="dot">•</span>
+            <span>UI/UX Design</span>
+            <span class="dot">•</span>
+            <span>Visual Storytelling</span>
+            <span class="dot">•</span>
+        </div>
+    </div>
+
+    <!-- Selected Work Section -->
+    <section class="work section" id="work">
+        <div class="bg-typography-large">CRAFT</div>
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-heading">Featured <br><span class="gradient-text">Masterpieces</span></h2>
+                <p class="section-desc">A curated selection of high-end motion design, SaaS ad campaigns, and AI-driven brand identity.</p>
+            </div>
+            
+            <div class="project-grid asymmetric-grid">
+                <!-- Project 1: SaaS Ad Campaign -->
+                <div class="project-card reveal-up parallax-card card-left video-card">
+                    <div class="project-video-wrapper glass">
+                        <button class="mute-btn glass" data-target="yt-player-1" data-muted="true" aria-label="Toggle Sound">
+                            <!-- Volume Off (Muted) Icon -->
+                            <svg class="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <!-- Volume Up (Unmuted) Icon (hidden by default) -->
+                            <svg class="icon-unmuted" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                        </button>
+                        <!-- Added enablejsapi=1 & mute=1 -->
+                        <iframe id="yt-player-1" class="project-video-iframe" src="https://www.youtube.com/embed/YpONdk_t36w?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=YpONdk_t36w&controls=1&modestbranding=1&rel=0&playsinline=1" title="High-Converting SaaS Ad Campaign" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="pointer-events: auto;"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>SaaS Ad Campaigns</span>
+                            <span>Midjourney / AI</span>
+                        </div>
+                        <h3>High-Converting SaaS Ads</h3>
+                        <p>End-to-end production of user-acquisition video campaigns using Higgsfield and Pika for rapid, high-fidelity ad generation.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Advanced CC -->
+                <div class="project-card reveal-up parallax-card card-right video-card">
+                    <div class="project-video-wrapper-horizontal glass">
+                        <button class="mute-btn glass" data-target="yt-player-2" data-muted="true" aria-label="Toggle Sound">
+                            <svg class="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                        </button>
+                        <!-- Added enablejsapi=1 & mute=1 -->
+                        <iframe id="yt-player-2" class="project-video-iframe" src="https://www.youtube.com/embed/v-jFL5a_aQw?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=v-jFL5a_aQw&controls=1&modestbranding=1&rel=0&playsinline=1" title="Cinematic Motion Architecture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="pointer-events: auto;"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>AE Expressions</span>
+                            <span>Advanced Compositing</span>
+                        </div>
+                        <h3>Cinematic Motion Architecture</h3>
+                        <p>Complex keyframe animation and dynamic compositing setups in After Effects driving multi-million dollar product launches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / The Creator Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-up parallax-card">
+                    <img src="./assets/profile_stylized.png" alt="Profile stylized by AI" class="profile-pic glass">
+                </div>
+                <div class="about-text reveal-up" style="transition-delay: 0.1s;">
+                    <h2 class="section-heading">The <br><span class="gradient-text">Architect</span></h2>
+                    <p class="about-lead">I am Udit Sharma.</p>
+                    <p>
+                        A Senior Visual Designer and AI Video Innovator. I transition brands from static legacy interfaces into dynamic, high-converting digital experiences. 
+                    </p>
+                    <p>
+                        By fusing heavy Adobe After Effects compositing with the speed of leading generative models (Runway, Pika, Midjourney), I deliver million-dollar aesthetics at the speed of modern tech cycles. Let's redefine what's visually possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="skills section glass-section" id="skills">
+        <!-- Giant stylized face background blended in securely -->
+        <div class="skills-section-bg"></div>
+        <div class="container">
+            <div class="skills-grid">
+                <div class="skills-text reveal-up">
+                    <h2 class="section-heading">The <span class="gradient-text">Arsenal</span></h2>
+                    <p>I don't just experiment with AI. I build production-ready pipelines combining hardcore technical editing with generative speed.</p>
+                </div>
+                
+                <div class="skills-cards">
+                    <div class="skill-card glass reveal-up">
+                        <div class="skill-icon">🔮</div>
+                        <h3>Generative AI Mastery</h3>
+                        <p>Elite prompting and workflow integration across Midjourney, Runway, Higgsfield, and Weavy to generate usable, stunning shots instantly.</p>
+                    </div>
+                    <div class="skill-card glass reveal-up" style="transition-delay: 0.1s;">
+                        <div class="skill-icon">⚡</div>
+                        <h3>Advanced CC Stack</h3>
+                        <p>Heavy After Effects compositing, complex expressions, dynamic tracking, and high-speed Premiere Pro multi-cam workflows.</p>
+                    </div>
+                    <div class="skill-card glass reveal-up" style="transition-delay: 0.2s;">
+                        <div class="skill-icon">💎</div>
+                        <h3>World-Class UI/UX</h3>
+                        <p>Designing and managing massive Figma asset libraries for $1B+ SaaS companies, ensuring pixel-perfect consistency on landing pages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper glass reveal-up">
+                <div class="contact-info-block">
+                    <h2>Ready to Build the Impossible?</h2>
+                    <p>Whether it's overhauling your visual identity or scaling your content with AI pipelines—let's talk.</p>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-label">Email:</span>
+                            <a href="mailto:contact@uditvideo.com">contact@uditvideo.com</a>
+                        </li>
+                        <li>
+                            <span class="contact-label">Location:</span>
+                            <span>Global Remote (IST Base)</span>
+                        </li>
+                    </ul>
+
+                    <form action="https://formspree.io/f/your_formspree_id" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="How can I help you?" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="booking-block glass" style="padding: 2rem; width: 100%; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; overflow: hidden; border-radius: 24px;">
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/letmedoedit/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0c0c0e&text_color=ffffff&primary_color=3b82f6" style="min-width:320px;height:700px;width:100%;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Udit Sharma. Handcrafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>
