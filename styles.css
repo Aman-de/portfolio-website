@@ -788,48 +788,186 @@ p {
     z-index: 1; /* Keep content above face texture */
 }
 
-/* --- Mobile Responsiveness (Max Width: 768px & 992px) --- */
-@media screen and (max-width: 992px) {
-    .project-grid, .skills-grid, .contact-wrapper, .about-grid, .asymmetric-grid { 
-        grid-template-columns: 1fr; 
-        gap: 3rem;
-    }
-    .card-left, .card-right { margin-top: 0; } /* Kill stagger on tablets/mobile */
+/* ============================================
+   MOBILE & RESPONSIVE STYLES
+   ============================================ */
+
+/* --- Hamburger Nav Toggle --- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition-fast);
+}
+.nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+}
+.nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
-@media screen and (max-width: 768px) {
-    /* Layout & Spacing */
-    .section { padding: 5rem 0; }
-    .container { padding: 0 1.5rem; }
-
-    /* Typography Scaling for Mobile */
-    h1 { font-size: 3.5rem; }
-    h2 { font-size: 2.5rem; }
-    h3 { font-size: 1.4rem; }
-    
-    .bg-typography-large {
-        font-size: 30vw;
-        top: 25%;
+/* --- Tablet: 992px --- */
+@media screen and (max-width: 992px) {
+    .project-grid,
+    .skills-grid,
+    .contact-wrapper,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
+    .card-left, .card-right { margin-top: 0; }
 
-    .hero-subtitle { font-size: 1.1rem; }
-    .about-lead { font-size: 1.6rem; }
-
-    /* Video Adapters for Mobile */
+    /* Stack the custom video grid vertically on tablet */
+    .custom-video-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .grid-col-left,
+    .grid-col-right {
+        margin-top: 0 !important;
+        width: 100%;
+    }
     .project-video-wrapper {
-        aspect-ratio: 9/16;
-        max-width: 100%; 
+        max-width: 420px;
         margin: 0 auto 1.5rem;
     }
-    
-    .project-video-wrapper-horizontal {
-        aspect-ratio: 16/9;
-        max-width: 100%;
-        margin: 0 auto 1.5rem;
+}
+
+/* --- Mobile: 768px --- */
+@media screen and (max-width: 768px) {
+    /* Core Layout */
+    .section { padding: 5rem 0; }
+    .container { padding: 0 1.25rem; }
+
+    /* Typography */
+    .hero-title   { font-size: clamp(2.8rem, 11vw, 5rem); line-height: 1.1; }
+    h2            { font-size: clamp(2rem, 8vw, 3rem); }
+    h3            { font-size: 1.25rem; }
+    .hero-subtitle { font-size: 1rem; letter-spacing: 0.05em; }
+    .about-lead   { font-size: 1.5rem; }
+    .section-desc { font-size: 1rem; }
+    .bg-typography-large { font-size: 28vw; top: 20%; }
+
+    /* --- Navigation --- */
+    .nav-toggle { display: flex; }
+    .nav-links {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 12, 0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 100;
+        backdrop-filter: blur(20px);
+    }
+    .nav-open .nav-links {
+        display: flex;
+    }
+    .nav-links .nav-btn {
+        font-size: 1.4rem;
+        padding: 1rem 2.5rem;
     }
 
-    /* Hero Center Focus */
-    .hero { align-items: center; text-align: center; }
-    .hero-actions { justify-content: center; }
-    .nav-links { display: none; } /* Simplified header */
+    /* --- Hero --- */
+    .hero {
+        align-items: flex-end;
+        text-align: left;
+        padding-bottom: 4rem;
+    }
+    .hero-content { padding: 0 1.25rem; }
+    .hero-actions {
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+    .hero-actions .btn {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Video Grid --- */
+    .custom-video-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .grid-col-left,
+    .grid-col-right {
+        margin-top: 0 !important;
+        width: 100%;
+    }
+    .project-video-wrapper {
+        aspect-ratio: 9 / 16;
+        max-width: 100%;
+        margin: 0 auto 1rem;
+    }
+    .project-video-wrapper-horizontal {
+        aspect-ratio: 16 / 9;
+        max-width: 100%;
+        margin: 0 auto 1rem;
+    }
+    .project-card { margin-bottom: 1rem; }
+    .project-info { padding: 0.5rem 0; }
+    .project-info h3 { font-size: 1.2rem; }
+    .project-info p  { font-size: 0.9rem; }
+
+    /* --- About --- */
+    .about-grid { gap: 2rem; }
+    .about-image { max-width: 280px; margin: 0 auto; }
+    .profile-pic { border-radius: 20px; }
+
+    /* --- Skills --- */
+    .skills-grid { gap: 2.5rem; }
+    .skills-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .skill-card { padding: 1.75rem; border-radius: 18px; }
+    .skill-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+
+    /* --- Contact --- */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .contact-info-block h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+    .calendly-inline-widget { height: 580px !important; }
+
+    /* --- Footer --- */
+    .footer { padding: 2rem 0; }
+    .footer p { font-size: 0.85rem; }
+
+    /* --- Marquee --- */
+    .marquee-content { gap: 1.5rem; font-size: 0.85rem; }
+}
+
+/* --- Small Mobile: 480px --- */
+@media screen and (max-width: 480px) {
+    .hero-title { font-size: clamp(2.2rem, 12vw, 3.2rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    .skills-cards { grid-template-columns: 1fr; }
+    .skill-card { padding: 1.5rem; }
+    .section-heading { letter-spacing: -0.02em; }
 }
