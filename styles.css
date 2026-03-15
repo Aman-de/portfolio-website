@@ -858,6 +858,12 @@ p {
     }
     .card-left, .card-right { margin-top: 0; }
 
+    /* Keep skill cards at 2-col on tablet */
+    .skills-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
     /* Stack the custom video grid vertically on tablet */
     .custom-video-grid {
         display: flex;
@@ -873,12 +879,26 @@ p {
         max-width: 420px;
         margin: 0 auto 1.5rem;
     }
+
+    /* Calendly containment on tablet */
+    .contact-wrapper {
+        padding: 2.5rem;
+    }
+    .booking-block {
+        overflow: hidden;
+        border-radius: 20px;
+    }
+    .calendly-inline-widget {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
 }
 
 /* --- Mobile: 768px --- */
 @media screen and (max-width: 768px) {
     /* Core Layout */
-    .section { padding: 5rem 0; }
+    body { overflow-x: hidden; }
+    .section { padding: 4.5rem 0; }
     .container { padding: 0 1.25rem; }
 
     /* Typography */
@@ -904,9 +924,7 @@ p {
         z-index: 100;
         backdrop-filter: blur(20px);
     }
-    .nav-open .nav-links {
-        display: flex;
-    }
+    .nav-open .nav-links { display: flex; }
     .nav-links .nav-btn {
         font-size: 1.4rem;
         padding: 1rem 2.5rem;
@@ -919,27 +937,12 @@ p {
         padding-bottom: 4rem;
     }
     .hero-content { padding: 0 1.25rem; }
-    .hero-actions {
-        flex-direction: row;
-        gap: 1rem;
-        justify-content: flex-start;
-    }
-    .hero-actions .btn {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.9rem;
-    }
+    .hero-actions { flex-direction: row; gap: 1rem; justify-content: flex-start; }
+    .hero-actions .btn { padding: 0.85rem 1.5rem; font-size: 0.9rem; }
 
     /* --- Video Grid --- */
-    .custom-video-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-    .grid-col-left,
-    .grid-col-right {
-        margin-top: 0 !important;
-        width: 100%;
-    }
+    .custom-video-grid { display: flex; flex-direction: column; gap: 2.5rem; }
+    .grid-col-left, .grid-col-right { margin-top: 0 !important; width: 100%; }
     .project-video-wrapper {
         aspect-ratio: 9 / 16;
         max-width: 100%;
@@ -960,16 +963,21 @@ p {
     .about-image { max-width: 280px; margin: 0 auto; }
     .profile-pic { border-radius: 20px; }
 
-    /* --- Skills --- */
-    .skills-grid { gap: 2.5rem; }
+    /* --- Skills: 2-col on mobile landscape, stays readable --- */
+    .skills-grid { gap: 2rem; }
     .skills-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-    .skill-card { padding: 1.75rem; border-radius: 18px; }
-    .skill-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+    .skill-card {
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+    .skill-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .skill-card h3 { font-size: 1.1rem; }
+    .skill-card p  { font-size: 0.88rem; }
 
-    /* --- Contact --- */
+    /* --- Contact: stack vertically --- */
     .contact-wrapper {
         display: flex;
         flex-direction: column;
@@ -977,17 +985,20 @@ p {
         padding: 1.5rem;
         overflow: hidden;
     }
+    .contact-info-block h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+    
+    /* Calendly: contain within parent, allow internal scroll */
     .booking-block {
         width: 100% !important;
         max-width: 100% !important;
         overflow: hidden;
+        border-radius: 16px;
         padding: 0 !important;
     }
-    .contact-info-block h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
     .calendly-inline-widget {
         min-width: 0 !important;
         width: 100% !important;
-        height: 580px !important;
+        height: 600px !important;
     }
 
     /* --- Footer --- */
@@ -998,12 +1009,40 @@ p {
     .marquee-content { gap: 1.5rem; font-size: 0.85rem; }
 }
 
-/* --- Small Mobile: 480px --- */
+/* --- Small Mobile: 600px — skill cards go single column --- */
+@media screen and (max-width: 600px) {
+    /* Skills: 1-col on small phones */
+    .skills-cards {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+    .skill-card {
+        padding: 1.4rem 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .skill-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    .skill-card-text { flex: 1; }
+
+    /* Calendly extra containment on very small screens */
+    .calendly-inline-widget {
+        height: 650px !important;
+    }
+}
+
+/* --- Extra Small: 480px --- */
 @media screen and (max-width: 480px) {
-    .hero-title { font-size: clamp(2.2rem, 12vw, 3.2rem); }
+    .hero-title { font-size: clamp(2rem, 11vw, 2.8rem); }
     .hero-actions { flex-direction: column; align-items: flex-start; }
     .hero-actions .btn { width: 100%; text-align: center; }
-    .skills-cards { grid-template-columns: 1fr; }
-    .skill-card { padding: 1.5rem; }
     .section-heading { letter-spacing: -0.02em; }
+    .contact-wrapper { padding: 1.25rem; }
+    .form-group input,
+    .form-group textarea { font-size: 16px; } /* Prevents iOS zoom on focus */
 }
