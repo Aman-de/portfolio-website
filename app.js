@@ -121,3 +121,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// --- Contact Form: mailto handler ---
+function handleContactForm(e) {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+
+    const subject  = encodeURIComponent(`Portfolio Enquiry from ${name}`);
+    const body     = encodeURIComponent(`Hi Udit,\n\nMy name is ${name} and my email is ${email}.\n\n${message}`);
+    const mailto   = `mailto:contact@uditvideo.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailto;
+
+    // Show success message
+    const success = document.getElementById('cf-success');
+    if (success) {
+        success.style.display = 'block';
+        setTimeout(() => { success.style.display = 'none'; }, 5000);
+    }
+}
