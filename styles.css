@@ -730,40 +730,18 @@ p {
 }
 
 /* --- Contact Form Styles --- */
-.contact-form {
-    margin-top: 3rem;
+.contact-cta-group {
+    margin-top: 2.5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: var(--transition-fast);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-blue);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    align-self: flex-start;
-    border: none;
+.contact-email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 /* --- Section Background Injections --- */
