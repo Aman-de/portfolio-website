@@ -656,6 +656,7 @@ p {
     gap: 4rem;
     padding: 4rem;
     border-radius: 32px;
+    overflow: hidden; /* Prevent Calendly widget from clipping outside */
 }
 
 .contact-info-block h2 {
@@ -948,11 +949,24 @@ p {
 
     /* --- Contact --- */
     .contact-wrapper {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding: 1.5rem;
+        overflow: hidden;
+    }
+    .booking-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
+        padding: 0 !important;
     }
     .contact-info-block h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-    .calendly-inline-widget { height: 580px !important; }
+    .calendly-inline-widget {
+        min-width: 0 !important;
+        width: 100% !important;
+        height: 580px !important;
+    }
 
     /* --- Footer --- */
     .footer { padding: 2rem 0; }
