@@ -122,29 +122,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- Contact Form: mailto handler ---
-function handleContactForm(e) {
-    e.preventDefault();
-    const name    = document.getElementById('cf-name').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
+// --- Contact Form: Web3Forms submission ---
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
 
-    const subject  = encodeURIComponent(`Portfolio Enquiry from ${name}`);
-    const body     = encodeURIComponent(`Hi Udit,\n\nMy name is ${name} and my email is ${email}.\n\n${message}`);
-    const mailto   = `mailto:contact@uditvideo.com?subject=${subject}&body=${body}`;
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    // Use a hidden anchor to open mailto WITHOUT scrolling the page to top
-    const a = document.createElement('a');
-    a.href = mailto;
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+        const submitBtn = form.querySelector('.submit-btn');
+        const successEl = document.getElementById('cf-success');
+        const errorEl   = document.getElementById('cf-error');
 
-    // Show success message
-    const success = document.getElementById('cf-success');
-    if (success) {
-        success.style.display = 'block';
-        setTimeout(() => { success.style.display = 'none'; }, 5000);
-    }
-}
+        // Button loading state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Sending…';
+        submitBtn.disabled  = true;
+
+        const formData = new FormData(form);
+        const object   = Object.fromEntries(formData);
+        const json     = JSON.stringify(object);
+
+        try {
+            const res  = await fetch('https://api.web3forms.com/submit', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body:    json
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                if (successEl) { successEl.style.display = 'block'; }
+                if (errorEl)   { errorEl.style.display   = 'none';  }
+                form.reset();
+                setTimeout(() => { if (successEl) successEl.style.display = 'none'; }, 6000);
+            } else {
+                throw new Error(data.message || 'Submission failed');
+            }
+        } catch (err) {
+            if (errorEl)   { errorEl.style.display   = 'block'; }
+            if (successEl) { successEl.style.display = 'none';  }
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled  = false;
+        }
+    });
+});

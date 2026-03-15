@@ -236,18 +236,24 @@
                         </li>
                     </ul>
 
-                    <form id="contact-form" class="contact-form" onsubmit="handleContactForm(event)">
+                    <form id="contact-form" class="contact-form">
+                        <!-- Web3Forms: replace YOUR_ACCESS_KEY_HERE with key from web3forms.com -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New Portfolio Message">
+                        <input type="hidden" name="from_name" value="Udit Portfolio Site">
+                        <input type="checkbox" name="botcheck" style="display:none;">
                         <div class="form-group">
-                            <input type="text" id="cf-name" name="name" placeholder="Your Name" required autocomplete="name">
+                            <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="cf-email" name="email" placeholder="Your Email" required autocomplete="email">
+                            <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <textarea id="cf-message" name="message" placeholder="What are you working on?" rows="4" required></textarea>
+                            <textarea name="message" placeholder="What are you working on?" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn primary submit-btn">Send Message →</button>
-                        <p id="cf-success" style="display:none; color: #4ade80; margin-top: 1rem; font-size: 0.95rem;">✓ Opening your email client now…</p>
+                        <button type="submit" class="btn primary submit-btn">Send Message &rarr;</button>
+                        <p id="cf-success" style="display:none; color: #4ade80; margin-top: 1rem; font-size: 0.95rem;">&#10003; Message sent! I'll get back to you soon.</p>
+                        <p id="cf-error" style="display:none; color: #f87171; margin-top: 1rem; font-size: 0.95rem;">&#9888; Something went wrong. Try emailing directly.</p>
                     </form>
                 </div>
                 
