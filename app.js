@@ -133,7 +133,13 @@ function handleContactForm(e) {
     const body     = encodeURIComponent(`Hi Udit,\n\nMy name is ${name} and my email is ${email}.\n\n${message}`);
     const mailto   = `mailto:contact@uditvideo.com?subject=${subject}&body=${body}`;
 
-    window.location.href = mailto;
+    // Use a hidden anchor to open mailto WITHOUT scrolling the page to top
+    const a = document.createElement('a');
+    a.href = mailto;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 
     // Show success message
     const success = document.getElementById('cf-success');
